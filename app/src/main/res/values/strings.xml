@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Localisation4LTrophy</string>
+    <string name="action_settings">Settings</string>
+    <string name="ev_ville">Ville …</string>
+    <string name="btn_envoyer">Envoyer ma localisation</string>
+    <string name="tv_longitude">Longitude : %f</string>
+    <string name="tv_latitude">Latitude : %f</string>
+    <string name="position_actuelle">Position actuelle</string>
+    <string name="ancienne_position">Ancienne position : %s</string>
+    <string name="default_value">0.00000</string>
+</resources>
