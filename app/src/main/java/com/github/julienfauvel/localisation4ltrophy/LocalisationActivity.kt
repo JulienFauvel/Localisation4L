@@ -28,8 +28,8 @@ import com.github.kittinunf.result.Result
 
 class LocalisationActivity : AppCompatActivity() {
 
-    var longitude: Double? = null
-    var latitude: Double? = null
+    private var longitude: Double? = null
+    private var latitude: Double? = null
 
     private val permissions = listOf(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION)
 
