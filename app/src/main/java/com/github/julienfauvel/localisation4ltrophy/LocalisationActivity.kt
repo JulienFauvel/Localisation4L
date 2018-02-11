@@ -23,7 +23,6 @@ import android.view.View
 import com.github.julienfauvel.localisation4ltrophy.models.Coordonnee
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.httpGet
-import com.github.kittinunf.result.Result
 
 
 class LocalisationActivity : AppCompatActivity() {
@@ -135,13 +134,16 @@ class LocalisationActivity : AppCompatActivity() {
 
         val newCoordonnee = Coordonnee(this.tv_ville.text.toString(), this.longitude!!, this.latitude!!)
         Fuel.Companion.post("http://api.4lentraid.com/coordonnee", listOf("latitude" to newCoordonnee.latitude, "longitude" to newCoordonnee.longitude, "ville" to newCoordonnee.ville))
-                .response { request, response, result ->
-                    this.btn_valider.isEnabled = true
-
-                    when (result) {
-                        is Result.Success -> setPostSuccess()
-                        is Result.Failure -> setPostError()
+                .response { _, response, result ->
+                    val (_, err) = result
+                    val s = String(response.data)
+                    if(err == null && s.contains("false")) {
+                        setPostSuccess()
+                    } else {
+                        setPostError()
                     }
+
+                    this.btn_valider.isEnabled = true
                 }
 
         return true
@@ -149,12 +151,10 @@ class LocalisationActivity : AppCompatActivity() {
 
     private fun setPostSuccess() {
         this.infoHttp.text = getString(R.string.httpOk)
-        this.infoHttp.setTextColor(android.R.color.holo_green_dark)
     }
 
     private fun setPostError() {
         this.infoHttp.text = getString(R.string.httpKo)
-        this.infoHttp.setTextColor(android.R.color.holo_red_dark)
     }
 
     override fun onPause() {

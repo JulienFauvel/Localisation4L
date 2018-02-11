@@ -9,6 +9,22 @@
     tools:showIn="@layout/activity_localisation"
     android:id="@+id/contraintLayout">
 
+    <TextView
+        android:id="@+id/infoHttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_valider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:text="Erreur lors de la requête" />
+
     <Button
         android:id="@+id/btn_valider"
         android:layout_width="match_parent"
@@ -26,19 +42,16 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="222dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="178dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
 
-        app:layout_constraintBottom_toTopOf="@+id/btn_valider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.22">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <EditText
             android:id="@+id/tv_ville"
@@ -78,8 +91,8 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal"
             android:gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,13 +130,6 @@
                 tools:text="Latitude : 0.000000" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/infoHttp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            tools:text="Erreur lors de la requête" />
 
     </LinearLayout>
 
