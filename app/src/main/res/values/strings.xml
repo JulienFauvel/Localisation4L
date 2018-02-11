@@ -8,4 +8,10 @@
     <string name="position_actuelle">Position actuelle</string>
     <string name="ancienne_position">Ancienne position : %s</string>
     <string name="default_value">0.00000</string>
+    <string name="reessayer">Réessayer</string>
+    <string name="errorHttp">Erreur pendant la récupération</string>
+    <string name="httpOk">Mise à jour OK</string>
+    <string name="httpKo">Erreur lors de la mise à jour</string>
+    <string name="errorGps">Vous n\'êtes pas géolocalisé</string>
+
 </resources>

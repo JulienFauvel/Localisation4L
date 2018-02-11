@@ -12,8 +12,8 @@ import com.github.kittinunf.result.Result
 
 class CoordonneeService {
     companion object {
-        fun getCoordonnee(activity: Activity, view: View): Triple<Request, Response, Result<Coordonnee, FuelError>> {
-            return "http://api.4lentraid.com/coordonnee".httpGet().responseObject(Coordonnee.Deserializer())
+        fun getCoordonnee(activity: Activity, view: View): Triple<Request, Response, Result<Array<Coordonnee>, FuelError>> {
+            return "http://api.4lentraid.com/coordonnee".httpGet().responseObject(Coordonnee.DeserializerArray())
         }
     }
 }
